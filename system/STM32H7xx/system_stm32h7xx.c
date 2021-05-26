@@ -111,6 +111,7 @@
 /** @addtogroup STM32H7xx_System_Private_FunctionPrototypes
   * @{
   */
+ void JumpToBootloader(void);
 
 /**
   * @}
@@ -259,6 +260,12 @@ void SystemInit (void)
 
 #endif /*DUAL_CORE && CORE_CM4*/
 
+  /*check if the magic word is set   0x0D15EA5E */
+  if(*((unsigned long *)0x20003FF0)==0x0D15EA5E){
+    *((unsigned long *)0x20003FF0)=  0xde4db33f;//clear the word
+    JumpToBootloader();
+
+  }
 }
 
 /**
@@ -393,9 +400,52 @@ void SystemCoreClockUpdate (void)
 #else
   SystemCoreClock = common_system_clock;
 #endif /* DUAL_CORE && CORE_CM4 */
+
+
 }
 
+/*Marco EXPERIMENTAL:Jump to Bootloader function*/
+ void JumpToBootloader(void)
+    {
+      uint32_t i=0;
+      void (* SysMemBootJump) (void); /* declare a function pointer */
+      __IO uint32_t BootAddr = 0x1FF09800; /* STM32H7 system BootLoader address */
+    
+      /* close the global interrupt */
+      //DISABLE_INT(); 
+    
+      /* Close tick timer, reset to default values ​​*/
+      SysTick->CTRL = 0;
+      SysTick->LOAD = 0;
+      SysTick->VAL = 0;
+    
+      /* set all clocks to the default state, using HSI clock */
+      HAL_RCC_DeInit();
+    
+      /* Turn off all interrupts, clear all interrupt pending flag */
+        for (i = 0; i < 8; i++)
+       {
+           NVIC->ICER[i]=0xFFFFFFFF;
+           NVIC->ICPR[i]=0xFFFFFFFF;
+        }    
+   
+      /* Enable global interrupts */
+       //ENABLE_INT();
+    
+      /* Jump to the system BootLoader, the first address is MSP, address + 4 is the reset interrupt service routine address */
+        SysMemBootJump = (void (*)(void)) (*((uint32_t *) (BootAddr + 4)));
+    
+      /* set the primary stack pointer */
+       __set_MSP(*(uint32_t *)BootAddr);
+       
+      /* RTOS in engineering, this statement is very important to privileged mode, use the MSP pointer */
+        __set_CONTROL(0);
+    
+      /* Jump to the system BootLoader */
+        SysMemBootJump(); 
+    
 
+    }
 /**
   * @}
   */

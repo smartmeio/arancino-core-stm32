@@ -47,7 +47,11 @@
 USBD_HandleTypeDef hUSBD_Device_CDC;
 
 static bool CDC_initialized = false;
-
+//---------------------------------
+volatile uint8_t dfu_request = 0;
+/* For a bug in some Linux 64 bit PC we need to delay the reset of the CPU of 500ms seconds */
+int counter_dfu_reset = 500; /* the unit is equal to CDC_POLLING_INTERVAL that is 1ms by default */
+//--------------------------------
 /* Received Data over USB are stored in this buffer       */
 CDC_TransmitQueue_TypeDef TransmitQueue;
 CDC_ReceiveQueue_TypeDef ReceiveQueue;
@@ -165,11 +169,19 @@ static int8_t USBD_CDC_Control(uint8_t cmd, uint8_t *pbuf, uint16_t length)
     /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
     /*******************************************************************************/
     case CDC_SET_LINE_CODING:
+     
+      
       linecoding.bitrate    = (uint32_t)(pbuf[0] | (pbuf[1] << 8) | \
-                                         (pbuf[2] << 16) | (pbuf[3] << 24));
+                                        (pbuf[2] << 16) | (pbuf[3] << 24));
+      if(linecoding.bitrate == 1200){ //if port is opened at 1200 baud set dfu_request
+         dfu_request = 1;
+	 *((unsigned long *)0x20003FF0) = 0x0D15EA5E;//set the magic Word
+         NVIC_SystemReset();//Reset to jump 
+      }
       linecoding.format     = pbuf[4];
       linecoding.paritytype = pbuf[5];
       linecoding.datatype   = pbuf[6];
+     
       break;
 
     case CDC_GET_LINE_CODING:
@@ -222,6 +234,7 @@ static int8_t USBD_CDC_Control(uint8_t cmd, uint8_t *pbuf, uint16_t length)
   */
 static int8_t USBD_CDC_Receive(uint8_t *Buf, uint32_t *Len)
 {
+   
 #ifdef DTR_TOGGLING_SEQ
   if (dtr_toggling > 3) {
     dtr_togglingHook(Buf, Len);
@@ -299,10 +312,11 @@ bool CDC_connected()
   if (transmitTime) {
     transmitTime = HAL_GetTick() - transmitTime;
   }
-  return ((hUSBD_Device_CDC.dev_state == USBD_STATE_CONFIGURED)
-          && (transmitTime < USB_CDC_TRANSMIT_TIMEOUT)
-          && lineState);
-}
+ 
+    return ((hUSBD_Device_CDC.dev_state == USBD_STATE_CONFIGURED)
+             && (transmitTime < USB_CDC_TRANSMIT_TIMEOUT)
+             && lineState);
+   }
 
 void CDC_continue_transmit(void)
 {

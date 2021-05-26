@@ -210,3 +210,23 @@ tools.remoteproc_gen.script=run_arduino_gen.sh
 tools.remoteproc_gen.upload.params.verbose=
 tools.remoteproc_gen.upload.params.quiet=
 tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{build.path}/{build.project_name}.elf" "{build.path}/run_arduino_{build.project_name}.sh"
+
+
+#Upload using SMARTME.io Loader
+
+#
+# arduinoSTM32load
+# ----------------
+#tools.arduinoSTM32load.path={runtime.tools.STM32Tools.path}
+toolsarduinoSTM32load.path={runtime.tools.STM32Tools.path}/win
+tools.arduinoSTM32load.path.macosx={runtime.tools.STM32Tools.path}/macosx
+tools.arduinoSTM32load.path.linux={runtime.tools.STM32Tools.path}/linux
+#tools.arduinoSTM32load.cmd=arduinoSTM32load.sh
+tools.arduinoSTM32load.cmd=arduinoSTM32load
+tools.arduinoSTM32load.upload.params.verbose=-v
+tools.arduinoSTM32load.upload.params.quiet=
+#tools.arduinoSTM32load.upload.pattern="{path}/{cmd}" "{path}" "{runtime.tools.dfu-util.path}" "{build.path}/{build.project_name}.bin" "{serial.port}" 
+tools.arduinoSTM32load.upload.pattern="{path}/{cmd}" -dfu "{runtime.tools.dfu-util.path}" -bin "{build.path}/{build.project_name}.bin" -port="{serial.port}" -v
+	
+
+

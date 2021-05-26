@@ -10,6 +10,68 @@ menu.virtio=Virtual serial support
 menu.opt=Optimize
 menu.rtlib=C Runtime Library
 menu.upload_method=Upload method
+################################################################################
+# Arancino V boards
+ArancinoV.name=ArancinoV
+ArancinoV.build.core=arduino
+ArancinoV.build.board=ArancinoV
+ArancinoV.build.variant_h=variant_{build.board}.h
+ArancinoV.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+
+# ArancinoV12_H743ZI board
+ArancinoV.menu.pnum.ArancinoV12_H743ZI=ArancinoV12 H743ZI
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.node=NODE_H743ZI
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.maximum_size=2097152
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.maximum_data_size=524288
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.mcu=cortex-m7
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ArancinoV12_H743ZI
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.series=STM32H7xx
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.product_line=STM32H743xx
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.variant=STM32H7xx/ArancinoV12
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+
+# ArancinoV12_H743ZI2 board
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2=ArancinoV12 H743ZI2
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.node="NODE_H743ZI,NOD_H743ZI2"
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.maximum_size=2097152
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.maximum_data_size=524288
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.mcu=cortex-m7
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ArancinoV12_H743ZI2
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.series=STM32H7xx
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.product_line=STM32H743xx
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant=STM32H7xx/ArancinoV12
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+
+# Upload menu
+ArancinoV.menu.upload_method.MassStorage=Mass Storage
+ArancinoV.menu.upload_method.MassStorage.upload.protocol=
+ArancinoV.menu.upload_method.MassStorage.upload.tool=massStorageCopy
+
+ArancinoV.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
+ArancinoV.menu.upload_method.swdMethod.upload.protocol=0
+ArancinoV.menu.upload_method.swdMethod.upload.options=-g
+ArancinoV.menu.upload_method.swdMethod.upload.tool=stm32CubeProg
+
+ArancinoV.menu.upload_method.serialMethod=STM32CubeProgrammer (Serial)
+ArancinoV.menu.upload_method.serialMethod.upload.protocol=1
+ArancinoV.menu.upload_method.serialMethod.upload.options={serial.port.file} -s
+ArancinoV.menu.upload_method.serialMethod.upload.tool=stm32CubeProg
+
+ArancinoV.menu.upload_method.dfuMethod=STM32CubeProgrammer (DFU)
+ArancinoV.menu.upload_method.dfuMethod.upload.protocol=2
+ArancinoV.menu.upload_method.dfuMethod.upload.options=-g
+ArancinoV.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
+
+ArancinoV.menu.upload_method.dfuMethod=SmartMeUpload (DFU)
+# Nucleo_144.menu.upload_method.dfuMethod.use_1200bps_touch=true
+ArancinoV.menu.upload_method.dfuMethod.upload.protocol=3
+ArancinoV.menu.upload_method.dfuMethod.upload.options=-f
+ArancinoV.menu.upload_method.dfuMethod.upload.options.verbose=-v
+ArancinoV.menu.upload_method.dfuMethod.upload.tool=arduinoSTM32load
 
 ################################################################################
 # Nucleo 144 boards
@@ -105,6 +167,11 @@ Nucleo_144.menu.pnum.NUCLEO_H743ZI2=Nucleo H743ZI2
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.node="NODE_H743ZI,NOD_H743ZI2"
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.maximum_size=2097152
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.maximum_data_size=524288
+Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.use_1200bps_touch=true
+Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.wait_for_upload_port=false
+Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.native_usb=false
+Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.params.quiet=-q
+Nucleo_144.menu.pnum.NUCLEO_H743ZI2.upload.params.verbose=-q
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.mcu=cortex-m7
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.board=NUCLEO_H743ZI2
@@ -113,6 +180,34 @@ Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.product_line=STM32H743xx
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.variant=STM32H7xx/H742Z(G-I)T_H743Z(G-I)T_H747A(G-I)I_H747I(G-I)T_H750ZBT_H753ZIT_H757AII_H757IIT
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.variant_h=variant_NUCLEO_H743ZI.h
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+
+# ArancinoV12_H743ZI board
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI=ArancinoV12 H743ZI
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.node=NODE_H743ZI
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.upload.maximum_size=2097152
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.upload.maximum_data_size=524288
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.mcu=cortex-m7
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.board=ArancinoV12_H743ZI
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.series=STM32H7xx
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.product_line=STM32H743xx
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.variant=STM32H7xx/ArancinoV12
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+# ArancinoV12_H743ZI2 board
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2=ArancinoV12 H743ZI2
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.node="NODE_H743ZI,NOD_H743ZI2"
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.upload.maximum_size=2097152
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.upload.maximum_data_size=524288
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.mcu=cortex-m7
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.board=ArancinoV12_H743ZI2
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.series=STM32H7xx
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.product_line=STM32H743xx
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.variant=STM32H7xx/ArancinoV12
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+Nucleo_144.menu.pnum.ArancinoV12_H743ZI2.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+
 
 # NUCLEO_L496ZG board
 Nucleo_144.menu.pnum.NUCLEO_L496ZG=Nucleo L496ZG
@@ -199,6 +294,12 @@ Nucleo_144.menu.upload_method.dfuMethod.upload.protocol=2
 Nucleo_144.menu.upload_method.dfuMethod.upload.options=-g
 Nucleo_144.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 
+Nucleo_144.menu.upload_method.dfuMethod=SmartMeUpload (DFU)
+# Nucleo_144.menu.upload_method.dfuMethod.use_1200bps_touch=true
+Nucleo_144.menu.upload_method.dfuMethod.upload.protocol=3
+Nucleo_144.menu.upload_method.dfuMethod.upload.options=-f
+Nucleo_144.menu.upload_method.dfuMethod.upload.options.verbose=-v
+Nucleo_144.menu.upload_method.dfuMethod.upload.tool=arduinoSTM32load
 ################################################################################
 # Nucleo 64 boards
 
