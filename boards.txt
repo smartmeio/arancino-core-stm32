@@ -1,12 +1,10 @@
 # See: https://arduino.github.io/arduino-cli/latest/platform-specification/
 
 menu.pnum=Board part number
-
 menu.xserial=U(S)ART support
 menu.usb=USB support (if available)
 menu.xusb=USB speed (if available)
 menu.virtio=Virtual serial support
-
 menu.opt=Optimize
 menu.rtlib=C Runtime Library
 menu.upload_method=Upload method
@@ -26,7 +24,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.maximum_data_size=524288
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.maximum_data_size=524288
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.use_1200bps_touch=true
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.wait_for_upload_port=false
-ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.native_usb=false
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.native_usb=false
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.params.quiet=-q
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.params.verbose=-q
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.mcu=cortex-m7
@@ -5542,6 +5540,13 @@ Midatronics.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 
 ################################################################################
 # Serialx activation
+ArancinoV.menu.xserial.generic=Enabled (generic 'Serial')
+ArancinoV.menu.xserial.generic=Enabled (generic 'Serial')
+ArancinoV.menu.xserial.none=Enabled (no generic 'Serial')
+ArancinoV.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
+ArancinoV.menu.xserial.disabled=Disabled (No Serial support)
+ArancinoV.menu.xserial.disabled.build.xSerial=
+
 Nucleo_144.menu.xserial.generic=Enabled (generic 'Serial')
 Nucleo_144.menu.xserial.none=Enabled (no generic 'Serial')
 Nucleo_144.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
@@ -5707,6 +5712,20 @@ Midatronics.menu.xserial.disabled=Disabled (No Serial support)
 Midatronics.menu.xserial.disabled.build.xSerial=
 
 # USB connectivity
+
+ArancinoV.menu.usb.none=None
+ArancinoV.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
+ArancinoV.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+ArancinoV.menu.usb.CDC=CDC (no generic 'Serial')
+ArancinoV.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
+ArancinoV.menu.usb.HID=HID (keyboard and mouse)
+ArancinoV.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
+ArancinoV.menu.xusb.FS=Low/Full Speed
+ArancinoV.menu.xusb.HS=High Speed
+ArancinoV.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
+ArancinoV.menu.xusb.HSFS=High Speed in Full Speed mode
+ArancinoV.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
+
 Nucleo_144.menu.usb.none=None
 Nucleo_144.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
 Nucleo_144.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
@@ -5970,6 +5989,27 @@ Midatronics.menu.xusb.HSFS=High Speed in Full Speed mode
 Midatronics.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
 
 # Optimizations
+
+
+ArancinoV.menu.opt.osstd=Smallest (-Os default)
+ArancinoV.menu.opt.oslto=Smallest (-Os) with LTO
+ArancinoV.menu.opt.oslto.build.flags.optimize=-Os -flto
+ArancinoV.menu.opt.o1std=Fast (-O1)
+ArancinoV.menu.opt.o1std.build.flags.optimize=-O1
+ArancinoV.menu.opt.o1lto=Fast (-O1) with LTO
+ArancinoV.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+ArancinoV.menu.opt.o2std=Faster (-O2)
+ArancinoV.menu.opt.o2std.build.flags.optimize=-O2
+ArancinoV.menu.opt.o2lto=Faster (-O2) with LTO
+ArancinoV.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+ArancinoV.menu.opt.o3std=Fastest (-O3)
+ArancinoV.menu.opt.o3std.build.flags.optimize=-O3
+ArancinoV.menu.opt.o3lto=Fastest (-O3) with LTO
+ArancinoV.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+ArancinoV.menu.opt.ogstd=Debug (-g)
+ArancinoV.menu.opt.ogstd.build.flags.optimize=-g -Og
+
+
 Nucleo_144.menu.opt.osstd=Smallest (-Os default)
 Nucleo_144.menu.opt.oslto=Smallest (-Os) with LTO
 Nucleo_144.menu.opt.oslto.build.flags.optimize=-Os -flto
@@ -6447,6 +6487,17 @@ Midatronics.menu.opt.ogstd=Debug (-g)
 Midatronics.menu.opt.ogstd.build.flags.optimize=-g -Og
 
 # C Runtime Library
+
+ArancinoV.menu.rtlib.nano=Newlib Nano (default)
+ArancinoV.menu.rtlib.nanofp=Newlib Nano + Float Printf
+ArancinoV.menu.rtlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
+ArancinoV.menu.rtlib.nanofs=Newlib Nano + Float Scanf
+ArancinoV.menu.rtlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
+ArancinoV.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
+ArancinoV.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
+ArancinoV.menu.rtlib.full=Newlib Standard
+ArancinoV.menu.rtlib.full.build.flags.ldspecs=
+
 Nucleo_144.menu.rtlib.nano=Newlib Nano (default)
 Nucleo_144.menu.rtlib.nanofp=Newlib Nano + Float Printf
 Nucleo_144.menu.rtlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
