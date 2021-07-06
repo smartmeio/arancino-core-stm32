@@ -217,10 +217,11 @@ tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{
 #
 # arduinoSTM32load
 # ----------------
-#tools.arduinoSTM32load.path={runtime.tools.arduinoSTM32load.path}
-toolsarduinoSTM32load.path={runtime.tools.arduinoSTM32load.path}/win
-tools.arduinoSTM32load.path.macosx={runtime.arduinoSTM32load.path}/macosx
-tools.arduinoSTM32load.path.linux={runtime.arduinoSTM32load.path}
+#
+tools.arduinoSTM32load.path={runtime.tools.arduinoSTM32load.path}
+tools.arduinoSTM32load.path={runtime.tools.arduinoSTM32load.path}/win
+tools.arduinoSTM32load.path.macosx={runtime.tools.arduinoSTM32load.path}/macosx
+tools.arduinoSTM32load.path.linux={runtime.tools.arduinoSTM32load.path}
 #tools.arduinoSTM32load.cmd=arduinoSTM32load.sh
 tools.arduinoSTM32load.cmd=arduinoSTM32load
 tools.arduinoSTM32load.upload.params.verbose=-v
