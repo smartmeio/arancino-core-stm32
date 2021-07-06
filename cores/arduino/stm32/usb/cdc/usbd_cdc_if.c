@@ -173,18 +173,11 @@ static int8_t USBD_CDC_Control(uint8_t cmd, uint8_t *pbuf, uint16_t length)
       
       linecoding.bitrate    = (uint32_t)(pbuf[0] | (pbuf[1] << 8) | \
                                         (pbuf[2] << 16) | (pbuf[3] << 24));
-    /*#######################################################################################*/
-    /*TRICK 1200--SoftDFU ResetToBootloader*/
       if(linecoding.bitrate == 1200){ //if port is opened at 1200 baud set dfu_request
          dfu_request = 1;
 	 *((unsigned long *)0x20003FF0) = 0x0D15EA5E;//set the magic Word
          NVIC_SystemReset();//Reset to jump 
       }
-    /*TRICK 300--Reset*/
-       if(linecoding.bitrate == 300){ //if port is opened at 300 reset
-         NVIC_SystemReset();//Reset 
-      }
-    /*#######################################################################################*/
       linecoding.format     = pbuf[4];
       linecoding.paritytype = pbuf[5];
       linecoding.datatype   = pbuf[6];

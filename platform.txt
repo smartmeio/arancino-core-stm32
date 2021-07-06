@@ -4,7 +4,7 @@
 # For more info:
 # https://arduino.github.io/arduino-cli/latest/platform-specification/
 
-name=STM32 boards groups (Board to be selected from Tools submenu 'Board part number')
+name= SmartMe.io STM32 boards 
 version=2.0.0
 
 # STM compile variables
@@ -217,10 +217,10 @@ tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{
 #
 # arduinoSTM32load
 # ----------------
-#tools.arduinoSTM32load.path={runtime.tools.STM32Tools.path}
-toolsarduinoSTM32load.path={runtime.tools.STM32Tools.path}/win
-tools.arduinoSTM32load.path.macosx={runtime.tools.STM32Tools.path}/macosx
-tools.arduinoSTM32load.path.linux={runtime.tools.STM32Tools.path}/linux
+#tools.arduinoSTM32load.path={runtime.tools.arduinoSTM32load.path}
+toolsarduinoSTM32load.path={runtime.tools.arduinoSTM32load.path}/win
+tools.arduinoSTM32load.path.macosx={runtime.arduinoSTM32load.path}/macosx
+tools.arduinoSTM32load.path.linux={runtime.arduinoSTM32load.path}
 #tools.arduinoSTM32load.cmd=arduinoSTM32load.sh
 tools.arduinoSTM32load.cmd=arduinoSTM32load
 tools.arduinoSTM32load.upload.params.verbose=-v
