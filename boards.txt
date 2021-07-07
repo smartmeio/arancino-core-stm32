@@ -14,7 +14,7 @@ menu.upload_method=Upload method
 ################################################################################
 # Arancino V boards
 
-ArancinoV.name=Nucleo-144
+ArancinoV.name=Arancino V
 ArancinoV.build.core=arduino
 ArancinoV.build.board=ArancinoV
 ArancinoV.build.variant_h=variant_{build.board}.h
