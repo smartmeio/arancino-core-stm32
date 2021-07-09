@@ -27,7 +27,7 @@ _Work in progress_
 
 ## License and credits
 
-This core has been developed by Arduino LLC in collaboration with Atmel, 
+This core has been developed by STM32Duino(`https://github.com/stm32duino`), 
 and customized by smartme.IO s.r.l.
 
 ```
@@ -48,4 +48,4 @@ and customized by smartme.IO s.r.l.
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ```
 
-Arduino and Atmel are trademarks of their respective owners.
+
