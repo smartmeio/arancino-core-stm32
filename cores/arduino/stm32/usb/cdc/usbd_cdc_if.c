@@ -178,6 +178,9 @@ static int8_t USBD_CDC_Control(uint8_t cmd, uint8_t *pbuf, uint16_t length)
 	 *((unsigned long *)0x20003FF0) = 0x0D15EA5E;//set the magic Word
          NVIC_SystemReset();//Reset to jump 
       }
+      if(linecoding.bitrate == 300){ //if port is opened at 1200 baud set dfu_request
+         NVIC_SystemReset();//Reset MCU
+      }
       linecoding.format     = pbuf[4];
       linecoding.paritytype = pbuf[5];
       linecoding.datatype   = pbuf[6];

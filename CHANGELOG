@@ -1,0 +1,8 @@
+#### v 1.0.0 - 2019.11.27
+
+* First release
+* Based on official STM32Duino core v2.0.0.
+* Add Arancino V12 board
+* Introduced the possibility to flash the firmware via usb(via DFU-utils and 1200bps trick)
+* Introduced the remote MCU-reset via 300bps trick
+* Add FreeRTOS in the core.
