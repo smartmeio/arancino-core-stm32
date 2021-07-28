@@ -31,7 +31,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduino-stm32-arancino")
+FRAMEWORK_DIR = platform.get_package_dir("framework-arancino-stm32-arancino")
 CMSIS_DIR = join(platform.get_package_dir("framework-cmsis"), "CMSIS")
 assert isdir(FRAMEWORK_DIR)
 assert isdir(CMSIS_DIR)
@@ -180,13 +180,13 @@ env.Append(
         "HAL_UART_MODULE_ENABLED",
     ],
     CPPPATH=[
-        join(FRAMEWORK_DIR, "cores", "arduino", "avr"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "stm32"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "LL"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "OpenAMP"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb", "hid"),
-        join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb", "cdc"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "avr"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "stm32"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "stm32", "LL"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "stm32", "usb"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "stm32", "OpenAMP"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "stm32", "usb", "hid"),
+        join(FRAMEWORK_DIR, "cores", "arancino", "stm32", "usb", "cdc"),
         join(FRAMEWORK_DIR, "system", "Drivers", series + "_HAL_Driver", "Inc"),
         join(FRAMEWORK_DIR, "system", "Drivers", series + "_HAL_Driver", "Src"),
         join(FRAMEWORK_DIR, "system", series),
@@ -263,7 +263,7 @@ env.Append(
             "gcc",
         ),
         join(CMSIS_DIR, "DSP", "Include"),
-        join(FRAMEWORK_DIR, "cores", "arduino"),
+        join(FRAMEWORK_DIR, "cores", "arancino"),
         variant_dir,
     ],
     LINKFLAGS=[
@@ -319,7 +319,7 @@ env.Append(ASFLAGS=env.get("CCFLAGS", [])[:])
 
 env.Append(
     LIBSOURCE_DIRS=[
-        join(FRAMEWORK_DIR, "libraries", "__cores__", "arduino"),
+        join(FRAMEWORK_DIR, "libraries", "__cores__", "arancino"),
         join(FRAMEWORK_DIR, "libraries"),
     ]
 )
@@ -335,7 +335,7 @@ if "build.variant" in env.BoardConfig():
     env.BuildSources(join("$BUILD_DIR", "FrameworkArduinoVariant"), variant_dir)
 
 env.BuildSources(
-    join("$BUILD_DIR", "FrameworkArduino"), join(FRAMEWORK_DIR, "cores", "arduino")
+    join("$BUILD_DIR", "FrameworkArduino"), join(FRAMEWORK_DIR, "cores", "arancino")
 )
 
 env.BuildSources(
