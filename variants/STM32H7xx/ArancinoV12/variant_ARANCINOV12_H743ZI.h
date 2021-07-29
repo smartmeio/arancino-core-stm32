@@ -135,7 +135,7 @@
   #define PG15                    116
   #define PH0                     117
   #define PH1                     118
-#else /* ARDUINO_NUCLEO_H743ZI */
+#else /* ARDUINO_ARANCINOV12_H743ZI */
   #define PG9                     0   // USART_A_RX
   #define PG14                    1   // USART_A_TX
   #define PF15                    2
@@ -314,7 +314,7 @@
 #define PF8_ALT1                (PF8  | ALT1)
 #define PF9_ALT1                (PF9  | ALT1)
 
-#ifdef ARDUINO_ArancinoV12_H743ZI2
+#ifdef ARDUINO_ARANCINOV12_H743ZI2
   #define NUM_DIGITAL_PINS      119
 #else
   #define NUM_DIGITAL_PINS      117
@@ -327,7 +327,7 @@
   #define LED_BUILTIN           PB0  // LD1
 #endif
 #define LED_GREEN               LED_BUILTIN
-#ifdef ARDUINO_ArancinoV12_H743ZI2
+#ifdef ARDUINO_ARANCINOV12_H743ZI2
   #define LED_YELLOW            PE1  // LD2
 #else
   #define LED_BLUE              PB7  // LD2

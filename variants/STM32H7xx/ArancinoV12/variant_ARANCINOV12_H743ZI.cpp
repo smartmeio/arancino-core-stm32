@@ -10,12 +10,12 @@
  *
  *******************************************************************************
  */
-#if defined(ARDUINO_ARANCINOV12_H743ZI) || defined(ARDUINO_ArancinoV12_H743ZI2)
+#if defined(ARDUINO_ARANCINOV12_H743ZI) || defined(ARDUINO_ARANCINOV12_H743ZI2)
 #include "pins_arduino.h"
 
 // Pin number
 const PinName digitalPin[] = {
-#ifdef ARDUINO_NUCLEO_H743ZI2
+#ifdef ARDUINO_ARANCINOV12_H743ZI2
   PB_7,
   PB_6,
   PG_14,
@@ -135,7 +135,7 @@ const PinName digitalPin[] = {
   PG_15,
   PH_0,
   PH_1
-#else /* ARDUINO_NUCLEO_H743ZI */
+#else /* ARDUINO_ARANCINOV12_H743ZI */
   PG_9,
   PG_14,
   PF_15,
@@ -270,7 +270,7 @@ const uint32_t analogInputPin[] = {
   82,  // A9
   83,  // A10
   84,  // A11
-#ifdef ARDUINO_NUCLEO_H743ZI2
+#ifdef ARDUINO_ARANCINOV12_H743ZI2
   85,  // A12
   94,  // A13
   95,  // A14
@@ -279,7 +279,7 @@ const uint32_t analogInputPin[] = {
   105, // A17
   106, // A18
   8,   // A19
-#else /* ARDUINO_NUCLEO_H743ZI */
+#else /* ARDUINO_ARANCINOV12_H743ZI */
   94,  // A12
   95,  // A13
   96,  // A14
