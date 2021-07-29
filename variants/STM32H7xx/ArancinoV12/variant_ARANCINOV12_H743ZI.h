@@ -15,7 +15,7 @@
 /*----------------------------------------------------------------------------
  *        STM32 pins number
  *----------------------------------------------------------------------------*/
-#ifdef ARDUINO_ArancinoV12_H743ZI2
+#ifdef ARDUINO_ARANCINOV12_H743ZI2
   #define PB7                     0  // USART_A_RX
   #define PB6                     1  // USART_A_TX
   #define PG14                    2

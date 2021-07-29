@@ -10,7 +10,7 @@
  *
  *******************************************************************************
  */
-#if defined(ARDUINO_ArancinoV12_H743ZI) || defined(ARDUINO_ArancinoV12_H743ZI2)
+#if defined(ARDUINO_ARANCINOV12_H743ZI) || defined(ARDUINO_ArancinoV12_H743ZI2)
 #include "pins_arduino.h"
 
 // Pin number

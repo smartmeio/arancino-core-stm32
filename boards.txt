@@ -32,7 +32,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ArancinoV12_H743ZI
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.variant=STM32H7xx/ArancinoV12
-ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ARANCINOV12_H743ZI.h
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2=ArancinoV12 H743ZI2
@@ -47,7 +47,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ArancinoV12_H743ZI2
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant=STM32H7xx/ArancinoV12
-ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ARANCINOV12_H743ZI.h
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
 # ArancinoV12_H743ZI board
@@ -63,7 +63,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ArancinoV12_H743ZI
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.variant=STM32H7xx/ArancinoV12
-ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ARANCINOV12_H743ZI.h
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2=ArancinoV12 H743ZI2
@@ -76,7 +76,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ArancinoV12_H743ZI2
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant=STM32H7xx/ArancinoV12
-ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ArancinoV12_H743ZI.h
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant_h=variant_ARANCINOV12_H743ZI.h
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
 # Serialx activation
