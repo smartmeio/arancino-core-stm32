@@ -28,7 +28,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.maximum_size=2097152
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.maximum_data_size=524288
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.mcu=cortex-m7
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ArancinoV12_H743ZI
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ARANCINOV12_H743ZI
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.variant=STM32H7xx/ArancinoV12
@@ -43,7 +43,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.use_1200bps_touch=true
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.wait_for_upload_port=false
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.mcu=cortex-m7
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ArancinoV12_H743ZI2
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ARANCINOV12_H743ZI2
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant=STM32H7xx/ArancinoV12
@@ -59,7 +59,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.use_1200bps_touch=true
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.upload.wait_for_upload_port=false
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.mcu=cortex-m7
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ArancinoV12_H743ZI
+ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.board=ARANCINOV12_H743ZI
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI.build.variant=STM32H7xx/ArancinoV12
@@ -72,7 +72,7 @@ ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.maximum_size=2097152
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.upload.maximum_data_size=524288
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.mcu=cortex-m7
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ArancinoV12_H743ZI2
+ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.board=ARANCINOV12_H743ZI2
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.series=STM32H7xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.product_line=STM32H743xx
 ArancinoV.menu.pnum.ArancinoV12_H743ZI2.build.variant=STM32H7xx/ArancinoV12
