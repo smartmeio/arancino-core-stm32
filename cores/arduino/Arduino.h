@@ -35,6 +35,8 @@
 
 #include "wiring.h"
 
+
+
 /* sketch */
 
 #ifdef __cplusplus
@@ -54,5 +56,12 @@ void yield(void);
 
 // Include pins variant
 #include "pins_arduino.h"
+
+// Allows Arancino Lib to read this value and pass it to Arancino Module
+// This value is modified in a CI/CD environment when a new tag is created
+#ifndef ARANCINO_CORE_VERSION
+#define ARANCINO_CORE_VERSION "0.0.0"
+#endif
+
 
 #endif // Arduino_h
