@@ -85,7 +85,7 @@ package_release:
         - echo $PKG_NAME_PIO > tmp/pkg_name_pio.txt
         - echo $CI_COMMIT_TAG > tmp/target_path.txt
 
-        - sed -i "s:\(ARANCINO_CORE_VERSION\) .*:\1 \"$CI_COMMIT_TAG\":" ./cores/arancino/Arduino.h
+        - sed -i "s:\(ARANCINO_CORE_VERSION\) .*:\1 \"$CI_COMMIT_TAG\":" ./cores/arduino/Arduino.h
         - sed -i "s:\(version\)=.*:\1=$CI_COMMIT_TAG:" ./platform.txt
         - jq --arg tag_ver ${CI_COMMIT_TAG} '.version = $tag_ver' package.json|sponge package.json
 
