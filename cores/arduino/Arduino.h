@@ -63,5 +63,10 @@ void yield(void);
 #define ARANCINO_CORE_VERSION "0.0.0"
 #endif
 
+#ifndef MCU_FAMILY
+#define MCU_FAMILY "STM32"
+#endif
+
+
 
 #endif // Arduino_h
