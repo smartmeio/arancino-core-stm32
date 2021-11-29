@@ -18,7 +18,7 @@ ArancinoV.name=Arancino V
 ArancinoV.build.core=arduino
 ArancinoV.build.board=ArancinoV
 ArancinoV.build.variant_h=variant_{build.board}.h
-ArancinoV.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DUSEFREERTOS 
+ArancinoV.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DUSEFREERTOS -D HAVE_HWSERIAL1 -DMCU_FAMILY="STM32" 
 
 
 # ArancinoV12_H743ZI board

@@ -361,6 +361,12 @@
 #ifndef PIN_SERIAL_TX
   #define PIN_SERIAL_TX         PD8
 #endif
+#ifndef PIN_SERIAL1_RX
+  #define PIN_SERIAL1_RX         PD6
+#endif
+#ifndef PIN_SERIAL1_TX
+  #define PIN_SERIAL1_TX         PD5
+#endif
 
 // HSE default value is 25MHz in HAL
 // HSE_BYPASS is 8MHz
@@ -403,5 +409,5 @@
   // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
   //                            pins are NOT connected to anything by default.
   #define SERIAL_PORT_MONITOR     Serial
-  #define SERIAL_PORT_HARDWARE    Serial
+  #define SERIAL_PORT_HARDWARE    Serial1
 #endif
