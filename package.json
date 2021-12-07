@@ -1,6 +1,18 @@
 {
-    "name": "framework-arduinoststm32",
-    "description": "Arduino Wiring-based Framework (STM32 Core)",
-    "version": "0.0.0",
-    "url": "https://github.com/stm32duino/Arduino_Core_STM32"
+  "name": "framework-arduino-stm32-arancino",
+  "version": "1.0.0",
+  "description": "The official SmartME Wiring-based Framework for STMicroelectronics STM32H7 series microcontrollers",
+  "keywords": [
+    "framework",
+    "arancino",
+    "smartme",
+    "microchip",
+    "stm32"
+  ],
+  "homepage": "https://arancino.cc/docs/",
+  "license": "LGPL-2.1-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smartmeio/arancino-core-stm32"
+  }
 }
