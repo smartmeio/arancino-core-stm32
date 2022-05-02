@@ -8,7 +8,7 @@ for ST's STM32H743 processor.
 This core is available as a package in the Arduino IDE cores manager. If you want to install it:
 
   1. Open the **Preferences** of the Arduino IDE.
-  2. Add this URL `https://media.githubusercontent.com/media/fastlock/testing-persona-stm32core/main/package_platformSTMsmartme_index.json` in the **Additional Boards Manager URLs** field, and click OK.
+  2. Add this URL `https://raw.githubusercontent.com/smartmeio/arancino-boards/dev/package_smartmeio_index.json` in the **Additional Boards Manager URLs** field, and click OK.
   3. Open the **Boards Manager** (menu Tools->Board->Board Manager...)
   4. Install **Arancino V Boards**
   5. Select one of the boards under **Arancino Boards** in Tools->Board menu
